@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Covid-19 News</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="jumbotron">
+        <center><h1>Covid-19 News Aggregator</h1>
+           <a href="/" class="btn btn-danger">Refresh News</a>
+        </form>
+        </center>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                    <h3 class="text-centre"><strong>News from Times of india</strong></h3>
+                    {% for n in toi_news %}
+                    <p>   {{n}} </p>
+                    <hr>
+                    {% endfor %}
+                    <br>
+
+                    <h3 class="text-centre"> <strong>News from Hindustan Times</strong></h3>
+                    {% for n in ht_news %}
+                    <p>   {{n}} </p>
+                    <hr>
+                    {% endfor %}
+                    <br>
+            </div> 
+
+            <div class="col-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title"><strong>Worldwide Cases</strong></h5>
+                    {% for n in w_case %}
+                    <p>   {{n}} </p>
+                    <hr>
+                    {% endfor %}
+                    <a href="https://www.worldometers.info/coronavirus/" class="btn btn-primary">Go to WorldoMeter</a>
+                  </div>
+        
+
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title"><strong>Cases in India</strong></h5>
+
+                      <p>Confirmed Cases: {{totalConfirmedCases}} </p><hr>
+                      <p>Deceased cases: {{totalDeceasedCases}} </p><hr>
+                      <p>Recovered: {{totalRecoveredCases}} </p><hr>
+                      
+                      <a href="https://www.covid19india.org/" class="btn btn-primary">Go Covid-19 India</a><br><br>
+                      <p>
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                          State/UT Confirmed Cases
+                        </button>
+                      </p>
+                      <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                          {% for n in stateCases %}
+                          <p>   {{n}} </p>
+                          <hr>
+                          {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <script
+src="http://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
