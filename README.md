@@ -8,6 +8,6 @@ Install below packages in python
 3. requests
 
 ## How to Execute
-1. git clone https://github.com/abidsal04/NewsAggregator.git
+1. git clone https://github.com/suvratagnihotri/Covid-19-News-Aggregator
 2. cd NewsAggregator
 3. python manage.py
